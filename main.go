@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
 
-	"github.com/gorilla/mux"
+	"github.com/ahmadaidil/gorilla-tusd-minio-server/app"
 )
 
 const defaultPort = ":3000"
@@ -17,16 +16,11 @@ func main() {
 		port = defaultPort
 	}
 
-	router := mux.NewRouter()
-
-	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintf(w, "Ok")
-	}).Methods("GET")
+	handler := app.Handler()
 
 	finish := make(chan bool)
 	go func() {
-		if err := http.ListenAndServe(":3000", router); err != nil {
+		if err := http.ListenAndServe(":3000", handler); err != nil {
 			panic(err)
 		}
 	}()
