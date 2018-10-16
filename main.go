@@ -20,7 +20,7 @@ func main() {
 
 	finish := make(chan bool)
 	go func() {
-		if err := http.ListenAndServe(":3000", handler); err != nil {
+		if err := http.ListenAndServe(port, handler); err != nil {
 			panic(err)
 		}
 	}()
