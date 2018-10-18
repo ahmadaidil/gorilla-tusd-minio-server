@@ -12,6 +12,7 @@ func Handler() http.Handler {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", handler.Home).Methods("GET")
+	router.PathPrefix("/upload/").Handler(http.StripPrefix("/upload/", handler.FileUpload()))
 
 	return router
 }
