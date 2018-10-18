@@ -36,7 +36,7 @@
             </label>
           </td>
           <td>
-            <input type="text" id="endpoint" name="endpoint" value="http://localhost:3000/upload/">
+            <input type="text" id="endpoint" name="endpoint" value="">
           </td>
         </tr>
         <tr>
@@ -105,6 +105,8 @@
     var uploadList      = document.querySelector("#upload-list");
     var chunkInput      = document.querySelector("#chunksize");
     var endpointInput   = document.querySelector("#endpoint");
+
+    endpointInput.value = "http://"+window.location.host+"/upload/"
 
     if (!tus.isSupported) {
       alertBox.classList.remove("hidden");
