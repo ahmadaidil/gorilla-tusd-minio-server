@@ -8,9 +8,9 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/volantis-technology/tusd"
-	"github.com/volantis-technology/tusd/cmd/tusd/cli"
-	"github.com/volantis-technology/tusd/s3store"
+	"github.com/tus/tusd"
+	"github.com/tus/tusd/cmd/tusd/cli"
+	"github.com/tus/tusd/s3store"
 )
 
 var (
