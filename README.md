@@ -53,4 +53,6 @@ Docker build
 docker build -t <image-name:tag> .
 ```
 ---
+### :warning: Docker run: Uploading file does not work when minio running in localhost.
+---
 &copy; 2018 Ahmad Aidil
