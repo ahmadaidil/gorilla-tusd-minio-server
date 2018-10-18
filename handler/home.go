@@ -1,12 +1,12 @@
 package handler
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/ahmadaidil/gorilla-tusd-minio-server/view"
 )
 
 // Home handler
 func Home(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "Ok")
+	view.Home(w, r)
 }
